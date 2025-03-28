@@ -43,15 +43,13 @@ The FIFA World Cup Analysis Dashboard integrates multiple data sources into a si
 ⸻
 
 **Solution Approach**
-	1.	Data Integration & SQL Queries:
-The project integrates historical data from various sources, including FIFA rankings, World Cup match results, and player statistics. SQL queries are used to extract, manipulate, and summarize this data, ensuring accurate insights.
-	2.	Data Visualization:
-Power BI is used to create an interactive and visually appealing dashboard. The dashboard includes:
+	1.	Data Integration & SQL Queries: The project integrates historical data from various sources, including FIFA rankings, World Cup match results, and player statistics. SQL queries are used to extract, manipulate, and summarize this data, ensuring accurate insights.
+	2.	Data Visualization: Power BI is used to create an interactive and visually appealing dashboard. 
+ The dashboard includes:
 	•	KPI Cards for top-level insights (e.g., total goals scored, total matches played, most successful teams).
 	•	Bar charts, line graphs, and pie charts to visualize performance trends, rankings, and player statistics.
 	•	Maps to show geographical insights like average attendance by country.
-	3.	User Interaction:
-The dashboard allows users to explore specific insights interactively, such as selecting different years, teams, or players, and visualizing how their performance evolved over time.
+	3.	User Interaction: The dashboard allows users to explore specific insights interactively, such as selecting different years, teams, or players, and visualizing how their performance evolved over time.
 
 ⸻
 
