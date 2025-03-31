@@ -1,0 +1,129 @@
+use football;
+
+
+select * from matches_played_1930_2022;
+select * from fixed_world_cup;
+select * from fix_fifa_ranking;
+
+-- 1 Check Total Matches Played in Each World Cup?
+SELECT 
+    YEAR(date), host, COUNT(*)
+FROM
+    matches_played_1930_2022
+GROUP BY host , YEAR(date);
+
+-- 2 Find the Top 5 Teams with the Most World Cup Final Appearances.
+with CTE1 as (
+SELECT home_team AS Team FROM matches_played_1930_2022 
+where round="final"
+    UNION ALL
+SELECT away_team AS Team FROM matches_played_1930_2022 
+where round="final")
+
+SELECT 
+    Team, COUNT(*) AS World_Cup_final_Appearances
+FROM
+    CTE1
+GROUP BY team
+ORDER BY World_Cup_final_Appearances DESC;
+
+-- 3 Rank Teams Based on Their FIFA Ranking Over Time;
+
+SELECT Team, Ranking, Points, 
+       RANK() OVER (ORDER BY Ranking ASC) AS Rank_Position
+FROM fix_fifa_ranking;
+
+-- 4 Find the Teams That Improved Their FIFA Ranking the Most;
+
+SELECT 
+    team, (ranking - previous_rank) AS improved_ranking
+FROM
+    fix_fifa_ranking
+ORDER BY improved_ranking DESC;
+
+-- 5 Find the Best Home Team Performance in World Cup History
+SELECT 
+    home_team AS Team,
+    COUNT(*) AS Matches,
+    SUM(CASE
+        WHEN home_score > away_score THEN 1
+        ELSE 0
+    END) AS Wins,
+    ROUND((SUM(CASE
+                WHEN home_score > away_score THEN 1
+                ELSE 0
+            END) * 100.0) / COUNT(*),
+            2) AS Win_Percentage
+FROM
+    matches_Played_1930_2022
+GROUP BY home_team
+ORDER BY Win_Percentage DESC
+LIMIT 10;
+
+-- 6 Find the Most Competitive Matches (Same Scorelines)
+SELECT 
+    home_team, away_team, home_score, away_score
+FROM
+    matches_Played_1930_2022
+WHERE
+    home_score <= away_score
+ORDER BY away_score DESC;
+
+-- 7 Find the Highest-Attended Matches in World Cup History
+
+select year, host, max(attendance) as attendance
+from matches_Played_1930_2022
+group by year, host
+order by attendance desc;
+
+
+-- 8 Find the Longest Unbeaten Streak by a Team
+
+WITH Winning_Streaks AS (
+SELECT home_team AS Team, 
+home_score > away_score AS Win_Flag,
+COUNT(*) OVER (PARTITION BY home_team ORDER BY Year ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS Streak
+FROM matches_Played_1930_2022
+WHERE home_score > away_score
+)
+SELECT Team, MAX(Streak) AS Longest_Streak
+FROM Winning_Streaks
+GROUP BY Team
+ORDER BY Longest_Streak DESC
+LIMIT 10;
+
+-- 9 Find the Highest Goal-Scoring Players in World Cup History
+SELECT 
+    topscorrer, SUM(goals) AS highest_goals
+FROM
+    fixed_world_cup
+GROUP BY topscorrer
+ORDER BY highest_goals DESC;
+
+-- 10 Find the Most Successful World Cup Hosts
+SELECT 
+    host, COUNT(*) as No_of_worldCup_hosts
+FROM
+    fixed_world_cup
+GROUP BY host 
+order by No_of_worldCup_hosts desc;
+
+-- 11 Find the Closest Matches (One-Goal Difference)
+
+select home_team, away_team, home_score, away_score from matches_played_1930_2022
+where ABS(home_score - away_score) = 1;
+
+-- 12 Find World Cup Finals That Went into Penalties
+
+SELECT 
+    home_team, away_team, home_penalty, away_penalty
+FROM
+    matches_Played_1930_2022
+WHERE
+    home_penalty IS NOT NULL
+        AND away_penalty IS NOT NULL
+ORDER BY home_penalty + away_penalty DESC
+LIMIT 10;
+
+select * from matches_Played_1930_2022
+
