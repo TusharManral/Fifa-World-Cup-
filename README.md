@@ -92,11 +92,11 @@ SQL scripts used in this project are available in the world_cup_analysis.sql fil
 ⸻
 
 **Outcomes**
-	•	✅ Replaced messy datasets with structured, query-ready formats
-	•	✅ Delivered SQL-powered insights with business context
-	•	✅ Created a polished Power BI dashboard optimized for decision-makers
-	•	✅ Solved real analytical questions using data from 1930 to 2022
-	•	✅ Built a reusable framework for similar sports analytics dashboards
+	•	Replaced messy datasets with structured, query-ready formats
+	•	Delivered SQL-powered insights with business context
+	•	Created a polished Power BI dashboard optimized for decision-makers
+	•	Solved real analytical questions using data from 1930 to 2022
+	•	Built a reusable framework for similar sports analytics dashboards
 
 ⸻
 
