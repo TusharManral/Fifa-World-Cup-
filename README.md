@@ -1,115 +1,111 @@
-# FIFA World Cup Analysis (1930–2022)
+# ⚽ FIFA World Cup Analysis (1930–2022)
 
-**Overview**
+## Overview
 
-This project dives deep into 92 years of FIFA World Cup history, analyzing patterns in performance, rankings, goals, and audience engagement.
+Every four years, the FIFA World Cup captivates billions. But while the excitement is global, the **analysis of its historical performance data is fragmented, raw, and difficult to interpret**. 
 
-While football is rich with data, stakeholders often lack a centralized analytical view. Raw stats are scattered across formats, and drawing comparisons across decades is time-consuming. Using SQL as the analytical backbone and Power BI for storytelling, this project bridges that gap — turning raw match data into insights.
+This project aims to centralize and decode 90+ years of World Cup data using **SQL for backend logic** and **Power BI for storytelling**, producing an intuitive, insights-rich dashboard.
 
-⸻
+**[Live Dashboard Access](https://app.powerbi.com/groups/me/reports/491f137b-ad20-45c0-aea3-304bacc81d2f/dabf75fbe66415e44ee4?ctid=c6e549b3-5f45-4032-aae9-d4244dc5b2c4&experience=power-bi)**  
 
-**Business Problem**
+---
 
-Despite being the world’s biggest sporting event, decision-makers across federations, teams, and media still struggle with:
-	•	Identifying which teams consistently perform well and win.
-	•	Tracking FIFA ranking progress and regressions over time.
-	•	Understanding the influence of home advantage on match outcomes.
-	•	Analyzing attendance trends and fan engagement globally.
-	•	Highlighting top individual performances across tournaments.
+## Business Problem
 
-In short, too much data, too little clarity.
+Despite the immense data generated across decades of FIFA World Cups, stakeholders (teams, managers, analysts, and fans) struggle with:
 
-⸻
+- Understanding team performance across tournaments  
+- Visualizing ranking trends over time  
+- Measuring attendance and fan engagement patterns  
+- Evaluating the role of leadership and home advantage  
+- Identifying consistent top performers and close matches  
 
-**The Solution – SQL + Power BI**
+There’s a clear **gap between raw data and actionable insight**.
 
-SQL was used extensively to clean, transform, and generate analytical views from raw files:
-	•	Cleaned and corrected ASCII issues, inconsistent naming, and delimiter issues.
-	•	Standardized all columns across 4 datasets: Matches, Rankings, World Cups, and Top Scorers.
-	•	Created joins to build a relational model across hosts, champions, teams, and match records.
-	•	Used SQL CTEs, window functions, aggregations, and subqueries to explore deep insights like:
-	•	Most consistent finalists
-	•	Team performance by win %
-	•	Goal trends by player and tournament
-	•	Penalty shootout occurrences
-	•	Attendance highs over the decades
+---
 
-Power BI then brought those SQL-driven insights to life — transforming static stats into an interactive visual experience.
+## Objectives
 
-⸻
+This project solves those gaps by:
 
-**Dashboard Highlights**
-	•	KPIs: Total Goals, Matches Played, Most Successful Team
-	•	Interactive Line Chart: Matches Played per World Cup (1930–2022)
-	•	Geo Map: Average Attendance by Country
-	•	Pie Chart: Most World Cup Titles Won
-	•	Bar Chart: Top Goal Scorers in History
-	•	Matrix: Dynamic FIFA Rankings (Previous vs. Current Points)
+-  Cleaning and transforming World Cup match data from 1930 to 2022  
+-  Using **SQL queries** to extract meaningful insights (CTEs, window functions, joins)  
+-  Creating an **interactive Power BI dashboard** to visualize trends and comparisons  
+-  Delivering real answers to real analytical questions
 
-With custom formatting, a dark-golden theme, and performance-driven layout — this dashboard balances visual appeal with analytical depth.
+---
 
-⸻
+##  Tools & Tech Stack
 
-**What We Discovered**
-	•	Brazil is the most successful national team (5 titles).
-	•	Just Fontaine scored a record 13 goals in one World Cup (1958).
-	•	Number of matches has grown steadily, reflecting tournament expansion.
-	•	Europe and South America lead in both performance and audience turnout.
-	•	FIFA rankings reflect not only performance, but consistent improvement or decline across seasons.
+- **SQL (MySQL)** – Data cleaning, transformation & analysis  
+- **Power BI** – Dashboard development & data modeling  
+- **Power Query** – Data shaping for visual layer  
+- **DAX** – KPI & metric creation  
+- **JSON/CSV** – Raw data formats  
+- **GitHub** – Version control & documentation  
 
-⸻
+---
 
-**Tech Stack**
-	•	SQL (MySQL) – Data preparation, transformation, and insights.
-	•	Power BI – Dashboard development and visual storytelling.
-	•	Power Query – ETL operations to model the data inside Power BI.
-	•	DAX – Created custom KPIs and dynamic calculations.
-	•	JSON/CSV – Raw data from Kaggle and historical archives.
-	•	GitHub – Version control and documentation.
+## SQL-Powered Insights
 
-⸻
+All analytical views in the dashboard are backed by **pure SQL logic**. Complex queries were used to explore:
 
-**Real-World Impact**
+- Total matches played per World Cup  
+- Final appearances & most successful teams  
+- Penalty shootouts & one-goal margin thrillers  
+- Top scorers by goals  
+- FIFA ranking trends & biggest improvers  
 
-This project simulates a real business scenario where:
-	•	Sports organizations need clear dashboards to support decisions on team performance, talent scouting, and fan engagement.
-	•	Media analysts require quick visuals on World Cup history to support storytelling.
-	•	Data teams are responsible for preparing large-scale historical data for non-technical decision-makers.
+📂 [View Full SQL Queries](link-to-your-sql-file-or-folder)
 
-It also demonstrates end-to-end project ownership — from raw file cleaning to SQL logic to visual analytics.
+---
 
-⸻
+## 📊 Power BI Dashboard Highlights
 
-**SQL-First Approach**
+🔹 **KPIs**:
+- Best FIFA Ranked Team  
+- Most Titles Won  
+- Total Matches Played  
+- Total Goals Scored  
 
-Instead of relying on Power BI alone, all data shaping was done using SQL, ensuring:
-	•	Reusability and performance
-	•	Transparent logic
-	•	Sharper insights
+🔹 **Visuals**:
+- World Cup Matches Over Time  
+- Most Successful Teams  
+- Top Goal Scorers  
+- Global Attendance Trends (Map)  
+- FIFA Ranking Matrix (with conditional formatting)
 
-SQL scripts used in this project are available in the world_cup_analysis.sql file in the repository.
+All visuals were carefully chosen to reflect **performance, engagement, and evolution** in international football.
 
-⸻
+---
 
-**Outcomes**
-	•	Replaced messy datasets with structured, query-ready formats
-	•	Delivered SQL-powered insights with business context
-	•	Created a polished Power BI dashboard optimized for decision-makers
-	•	Solved real analytical questions using data from 1930 to 2022
-	•	Built a reusable framework for similar sports analytics dashboards
+## Real-World Impact
 
-⸻
+This project reflects how organizations (like sports federations or analytics firms) could:
 
-**Future Scope**
-	•	Add predictive insights using machine learning (e.g., who’s likely to win next).
-	•	Automate data refresh using live APIs or updated ranking datasets.
-	•	Expand to include player-level performance dashboards.
-	•	Embed the Power BI dashboard online for public access.
+- Benchmark team performance
+- Understand historical trends
+- Build fan-focused media insights
+- Improve competitive strategies using data
 
-⸻
+---
 
-**Final Thoughts**
+## Conclusion
 
-This project is more than a dashboard — it’s a case study in real-world SQL analytics. It solves a meaningful business problem, blends storytelling with logic, and reflects professional, production-grade work.
+From SQL logic to data modeling and visualization, this project is an end-to-end demonstration of:
 
-If you’re looking to evaluate my SQL, data modeling, and dashboard design skills — this is the one to look at.
+- Clean data engineering practices  
+- Advanced analytical thinking  
+- Professional Power BI dashboard development  
+
+Whether you’re a data recruiter, football enthusiast, or hiring manager — this project showcases the **power of analytics in turning raw sports data into meaningful decisions**.
+
+---
+
+## What's Next?
+
+-  Real-time FIFA API integration  
+-  Player-level performance breakdown  
+-  Predictive insights for upcoming tournaments  
+-  Embed-ready Power BI for public web pages  
+
