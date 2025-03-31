@@ -56,19 +56,19 @@ All analytical views in the dashboard are backed by **pure SQL logic**. Complex 
 - Top scorers by goals  
 - FIFA ranking trends & biggest improvers  
 
-📂 [View Full SQL Queries](link-to-your-sql-file-or-folder)
+All the sql queries can be found in SQL-Powered ingihts section
 
 ---
 
-## 📊 Power BI Dashboard Highlights
+##  Power BI Dashboard Highlights
 
-🔹 **KPIs**:
-- Best FIFA Ranked Team  
+**KPIs**:
+ 
 - Most Titles Won  
 - Total Matches Played  
 - Total Goals Scored  
 
-🔹 **Visuals**:
+**Visuals**:
 - World Cup Matches Over Time  
 - Most Successful Teams  
 - Top Goal Scorers  
